@@ -9,27 +9,34 @@
       font-family: Arial, sans-serif;
       background: #f4f4f4;
       text-align: center;
-      padding: 40px;
+      padding: 20px;
+    }
+
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
     h1 {
       color: #222;
-      font-size: 28px;
+      font-size: 26px;
     }
 
     p {
       color: #555;
-      font-size: 18px;
+      font-size: 16px;
     }
 
     .btn {
       display: block;
-      width: 80%;
-      max-width: 300px;
+      width: 90%;
       margin: 15px auto;
       padding: 15px;
       font-size: 18px;
-      border: none;
       border-radius: 8px;
       text-decoration: none;
       color: white;
@@ -42,18 +49,66 @@
     .whatsapp {
       background: #25D366;
     }
+
+    .testimonial {
+      background: #eee;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .countdown {
+      color: red;
+      font-weight: bold;
+      margin-top: 10px;
+    }
   </style>
 </head>
 
 <body>
 
+<div class="container">
+
   <h1>🔥 Make Money Online</h1>
 
-  <p>Discover how I earn money daily using just my phone!</p>
+  <p>Discover how I earn daily using just my phone!</p>
 
-  <!-- CHANGE THIS LINK -->
+  <!-- MAIN BUTTON -->
   <a href="https://example.com" class="btn start">Start Now</a>
 
-  <!-- WhatsApp with auto message -->
+  <!-- WHATSAPP BUTTON -->
   <a href="https://wa.me/2349031862219?text=Hello%20I%20want%20to%20start%20making%20money%20online" class="btn whatsapp">
-    Chat Me
+    Chat Me on WhatsApp
+  </a>
+
+  <!-- TESTIMONIALS -->
+  <div class="testimonial">"I made my first $20 in 2 days!" – John</div>
+  <div class="testimonial">"This actually works, no scam!" – Sarah</div>
+  <div class="testimonial">"I’m now earning daily from my phone." – Mike</div>
+
+  <!-- COUNTDOWN -->
+  <div class="countdown">
+    Limited Spots Left: <span id="timer">05:00</span>
+  </div>
+
+</div>
+
+<script>
+  let time = 300;
+  let timer = document.getElementById("timer");
+
+  setInterval(() => {
+    let minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+
+    timer.innerHTML =
+      (minutes < 10 ? "0" : "") + minutes + ":" +
+      (seconds < 10 ? "0" : "") + seconds;
+
+    if (time > 0) time--;
+  }, 1000);
+</script>
+
+</body>
+</html>
